@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl">
+  <name>BancodeHoras</name>
+  <classpath>C:\Users\leo_a\Desktop\FACUUU\2º SEM\Banco de Dados\mysql-connector-j-8.0.31.jar</classpath>
+  <driver>com.mysql.jdbc.Driver</driver>
+  <username>root</username>
+  <password>Leon144957</password>
+  <url>jdbc:mysql://localhost/bancoHoras</url>
+  <database/>
+  <savePassword>true</savePassword>
+  <serverAddress/>
+</jdbcDataAdapter>

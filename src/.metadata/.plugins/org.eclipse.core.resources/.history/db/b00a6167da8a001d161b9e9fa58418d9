@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Horas_1" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="13acf49e-4913-4d1b-bccc-113817ad15d1">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BancodeHoras"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table_TH" mode="Opaque" backcolor="#000000">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#BFBFBF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Dataset1" uuid="8f304e28-2f04-4416-91a3-de85666275e5">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BancodeHoras"/>
+		<queryString language="SQL">
+			<![CDATA[select * from papamike]]>
+		</queryString>
+		<field name="re" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="re"/>
+			<property name="com.jaspersoft.studio.field.label" value="re"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="papamike"/>
+		</field>
+		<field name="horas" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="horas"/>
+			<property name="com.jaspersoft.studio.field.label" value="horas"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="papamike"/>
+		</field>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[select * from papamike]]>
+	</queryString>
+	<field name="re" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="re"/>
+		<property name="com.jaspersoft.studio.field.label" value="re"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="papamike"/>
+	</field>
+	<field name="horas" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="horas"/>
+		<property name="com.jaspersoft.studio.field.label" value="horas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="papamike"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="110" y="0" width="331" height="95" backcolor="#000000" uuid="5e899ad7-80a7-49f8-8978-0e6da2923fb5"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="330" height="66" uuid="faa132c5-fb0e-40b9-89db-2613e32a27ca"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Banco de Horas]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="0" y="66" width="331" height="29" uuid="666c21a1-5395-405f-8e8f-8ea4290d2f5a"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[BAv Sorocaba]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="110" y="100" width="331" height="32" forecolor="#000000" backcolor="#CC0000" uuid="cea20fa8-7ee1-4f5d-a9e7-ebc975db787a"/>
+				<textField pattern="MMMMM yyyy">
+					<reportElement x="187" y="10" width="144" height="20" forecolor="#FFFFFF" uuid="b614fc38-099f-4858-b86f-920883b1e0c6"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image>
+				<reportElement x="-11" y="10" width="120" height="120" uuid="9ffb70ba-6f09-462d-969d-f7ccb366a046"/>
+				<imageExpression><![CDATA["Brasão CAvPM - NOVO - Sem Fundo.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="440" y="10" width="120" height="120" uuid="4c43cca9-74c2-457e-9e4c-50bd0158b1d8"/>
+				<imageExpression><![CDATA["Bolacha nova.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="140" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" uuid="b50221b5-8254-440b-8c6f-1f0b138c9259"/>
+				<componentElement>
+					<reportElement x="60" y="0" width="400" height="121" uuid="998f11fa-1834-4080-90d7-2e21fa0f5f71">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+						<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+						<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+					</reportElement>
+					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="Dataset1" uuid="aca68407-9fb3-42c8-99d3-0e8df8d3519f">
+							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						</datasetRun>
+						<jr:column width="200" uuid="ac789897-a8b2-4985-a82a-003e28a849ec">
+							<jr:tableHeader style="Table_TH" height="30">
+								<staticText>
+									<reportElement x="0" y="0" width="200" height="30" forecolor="#FFFFFF" uuid="f85d7d07-6f71-440c-9756-fbbe89b82905"/>
+									<textElement verticalAlignment="Middle">
+										<font fontName="aRIAL&#xD;&#xA;" size="19"/>
+									</textElement>
+									<text><![CDATA[RE]]></text>
+								</staticText>
+							</jr:tableHeader>
+							<jr:tableFooter style="Table_TH" height="30"/>
+							<jr:columnFooter style="Table_CH" height="30"/>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField>
+									<reportElement x="0" y="0" width="200" height="30" uuid="d94e4305-b2fe-4d9a-9670-9c0c263cfa4a"/>
+									<textElement verticalAlignment="Middle">
+										<font fontName="ARIAL" size="16"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{re}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="200" uuid="be4d5125-ece3-4905-9dc0-5b87541c9dcf">
+							<jr:tableHeader style="Table_TH" height="30">
+								<staticText>
+									<reportElement x="0" y="0" width="200" height="30" forecolor="#FFFFFF" uuid="d3c23c4c-8109-48cc-9417-e366294efb03"/>
+									<textElement verticalAlignment="Middle">
+										<font size="19"/>
+									</textElement>
+									<text><![CDATA[Horas]]></text>
+								</staticText>
+							</jr:tableHeader>
+							<jr:tableFooter style="Table_TH" height="30"/>
+							<jr:columnFooter style="Table_CH" height="30"/>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField>
+									<reportElement x="0" y="0" width="200" height="30" uuid="0f06f793-6321-46d8-8c37-c01533a63618"/>
+									<textElement verticalAlignment="Middle">
+										<font fontName="ARIAL" size="16"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{horas}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:table>
+				</componentElement>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="1133a906-5b71-476e-9f3e-bc97c97058c1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="729c3539-f946-4d0e-a0a7-bda2815ea1b0"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="4834e99c-7f6c-485a-b098-50e5187f2ab4"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="9825b46e-76f1-469a-abb8-a1cc27aad685"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Pág "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="137d38c7-1a83-4fc5-b156-9d5f1b1a0ddc"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
